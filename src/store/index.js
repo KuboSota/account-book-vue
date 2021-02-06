@@ -35,14 +35,14 @@ export default new Vuex.Store({
     actions: {
       async login({ commit }, { email, password }) {
         const responseLogin = await axios.post(
-          "http://localhost:8000/api/login",
+          "https://lit-headland-00036.herokuapp.com/api/login",
           {
             email: email,
             password: password
           }
         )
         const responseUser = await axios.get(
-          "http://localhost:8000/api/user",
+          "https://lit-headland-00036.herokuapp.com/api/user",
           {
             params: {
               email: email
@@ -56,7 +56,7 @@ export default new Vuex.Store({
 
       logout({ commit }) {
         axios
-          .post("http://localhost:8000/api/logout", {
+          .post("https://lit-headland-00036.herokuapp.com/api/logout", {
             auth: this.state.auth
           })
           .then((response) => {
@@ -71,7 +71,7 @@ export default new Vuex.Store({
       async getIncome(context) {
         let data = []        
         await axios.get(
-          'http://localhost:8000/api/incomes'
+          'https://lit-headland-00036.herokuapp.com/api/incomes'
        ).then((res) => {
 
          for (let i = 0; i < res.data.data.length; i++) {
@@ -85,7 +85,7 @@ export default new Vuex.Store({
       async getExpense(context) {
         let data = []
        await axios.get(
-          'http://localhost:8000/api/expenses'
+          'https://lit-headland-00036.herokuapp.com/api/expenses'
        ).then((res) => {
          for (let i = 0; i < res.data.data.length; i++) {
            if (res.data.data[i].user_id == context.state.user.id) {
@@ -99,7 +99,7 @@ export default new Vuex.Store({
 
       async deleteIncome({ commit }, income_id) {
         let income = this.state.income
-        await axios.delete("http://localhost:8000/api/incomes/" + income_id).then(
+        await axios.delete("https://lit-headland-00036.herokuapp.com/api/incomes/" + income_id).then(
           income.some(function (incomeData, i) {
             if (incomeData.id == income_id) {
               income.splice(i,1)
@@ -115,7 +115,7 @@ export default new Vuex.Store({
 
       async deleteExpense({ commit }, expense_id) {
         let expense = this.state.expense
-        await axios.delete("http://localhost:8000/api/expenses/" + expense_id).then(
+        await axios.delete("https://lit-headland-00036.herokuapp.com/api/expenses/" + expense_id).then(
           expense.some(function (expenseData, i) {
             if (expenseData.id == expense_id) {
               expense.splice(i,1)

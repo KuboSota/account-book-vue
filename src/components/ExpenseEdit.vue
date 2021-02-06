@@ -225,7 +225,7 @@ export default {
     },
     showExpense() {
       axios
-        .get("http://localhost:8000/api/expenses/" + this.$route.params.id)
+        .get("https://lit-headland-00036.herokuapp.com/api/expenses/" + this.$route.params.id)
         .then((res) => {
           console.log(res);
           this.id = res.data.data.id;
@@ -242,7 +242,7 @@ export default {
       } else {
         this.modal = true;
       axios
-        .put("http://localhost:8000/api/expenses/" + this.id, {
+        .put("https://lit-headland-00036.herokuapp.com/api/expenses/" + this.id, {
           id: this.id,
           date: this.calendarDate,
           expense: this.current,

@@ -160,7 +160,7 @@ export default {
       } else {
         this.modal = true;
         axios
-          .post("http://localhost:8000/api/incomes", {
+          .post("https://lit-headland-00036.herokuapp.com/api/incomes", {
             user_id: this.$store.state.user.id,
             date: this.calendarDate,
             income: this.current,

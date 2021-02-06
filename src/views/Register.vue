@@ -30,7 +30,7 @@ export default {
   methods: {
     auth() {
       axios.post(
-        "http://localhost:8000/api/register",
+        "https://lit-headland-00036.herokuapp.com/api/register",
         {
           name: this.name,
           email: this.email,

@@ -149,7 +149,7 @@ export default {
       this.current = 0;
     },
     showIncome() {
-        axios.get("http://localhost:8000/api/incomes/"+ this.$route.params.id)
+        axios.get("https://lit-headland-00036.herokuapp.com/api/incomes/"+ this.$route.params.id)
         .then((res) => {
         this.id = res.data.data.id
         this.calendarDate = res.data.data.date
@@ -166,7 +166,7 @@ export default {
         this.modal = true;
 
       axios.put(
-        "http://localhost:8000/api/incomes/" + this.id,
+        "https://lit-headland-00036.herokuapp.com/api/incomes/" + this.id,
         {
           id: this.id,
           date: this.calendarDate,
