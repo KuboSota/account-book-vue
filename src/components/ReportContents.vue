@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     setIncome() {
-      console.log(this.$store.state.income)
+  
       const Incomes = this.$store.state.income;
       let monthIncomes = Incomes.filter((item) => {
         // console.log(this.month);

@@ -205,7 +205,7 @@ export default {
     getMoment() {
       let m = moment();
       this.calendarDate = moment(m).format("YYYY-MM-DD");
-      console.log(this.calendarDate);
+    
     },
     DatePickerFormat(date) {
       return moment(date).format("YYYY-MM-DD");
@@ -213,7 +213,7 @@ export default {
     pickerClosedChange() {
       if (this.calendarDate) {
         this.calendarDate = moment(this.calendarDate).format("YYYY-MM-DD");
-        console.log(this.calendarDate);
+      
       }
     },
     append(number) {

@@ -91,7 +91,6 @@ export default {
       let m = moment();
       this.month = Number(moment(m).format("YYYY-MM-DD").slice(5, 7));
       this.year = Number(moment(m).format("YYYY-MM-DD").slice(0, 4));
-      console.log(this.month);
     },
   },
   async created() {

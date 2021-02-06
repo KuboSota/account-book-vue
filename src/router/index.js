@@ -16,7 +16,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: Login
   },
@@ -26,7 +26,7 @@ const routes = [
     component: Register
   },
   {
-    path: '/',
+    path: '/report',
     name: 'Report',
     component: Report,
     props: true,
@@ -91,7 +91,7 @@ router.beforeEach((to, from, next) => {
     to.matched.some((record) => record.meta.requiresAuth) && !store.state.auth
   ) {
     next({
-      path: "/",
+      path: "/report",
       query: {
         redirect: to.fullPath,
       }

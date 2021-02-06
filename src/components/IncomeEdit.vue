@@ -140,7 +140,6 @@ export default {
     pickerClosedChange() {
       if (this.calendarDate) {
         this.calendarDate = moment(this.calendarDate).format("YYYY-MM-DD");
-        console.log(this.calendarDate);
       }
     },
     append(number) {
@@ -152,7 +151,6 @@ export default {
     showIncome() {
         axios.get("http://localhost:8000/api/incomes/"+ this.$route.params.id)
         .then((res) => {
-        console.log(res);
         this.id = res.data.data.id
         this.calendarDate = res.data.data.date
         this.current = res.data.data.income;
@@ -175,9 +173,7 @@ export default {
           income: this.current,
           contents: this.contents
         }
-      ).then((res) => {
-     
-        console.log(res);
+      ).then(() => {
           this.$router.replace("/list");
     })
     }
@@ -216,6 +212,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, 100px);
   gap: 20px;
+  margin-left: 10px;
+
 }
 
 .edit-grid {
@@ -282,7 +280,7 @@ label {
 @media screen and (max-width: 480px) {
 
   .datepicker {
-  margin-left: 10px;
+  margin-left: 30px;
   margin-top: 10px;
   width: 80%;
   
@@ -302,7 +300,7 @@ label {
   }
 
   .edit-grid {
-    padding-left: 15px;
+    padding-left: 20px;
   }
 
   .amount-btn {

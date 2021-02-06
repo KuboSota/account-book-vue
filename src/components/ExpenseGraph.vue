@@ -57,7 +57,6 @@ export default {
   methods: {
     fillData() {
       let datasetsData = this.datas.datasets[0].data;
-      let labels = this.datas.labels;
       let monthExpense = this.$store.state.expense.filter((item) => {
         return item.date.slice(5, 7) === "0" + this.month;
       });
@@ -115,14 +114,12 @@ export default {
             break;
           }
         }
-        console.log(labels);
       });
     },
     getMoment() {
       let m = moment();
       this.month = Number(moment(m).format("YYYY-MM-DD").slice(5, 7));
       this.year = Number(moment(m).format("YYYY-MM-DD").slice(0, 4));
-      console.log(this.month);
     },
   },
 

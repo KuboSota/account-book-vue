@@ -30,7 +30,7 @@
 export default {
   methods: {
     async goReport() {
-      await this.$store.dispatch("getIncome"), await this.$router.push("/");
+      await this.$store.dispatch("getIncome"), await this.$router.push("/report");
     },
   },
 };

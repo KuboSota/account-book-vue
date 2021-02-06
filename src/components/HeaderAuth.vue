@@ -2,7 +2,7 @@
   <div class="header flex">
     <div class="right flex">
       <p @click="$router.push('/register')">新規登録</p>
-      <p @click="$router.push('/login')">ログイン</p>
+      <p @click="$router.push('/')">ログイン</p>
     </div>
   </div>
 </template>

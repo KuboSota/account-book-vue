@@ -39,9 +39,15 @@ export default {
 
 .right-edit {
   /* margin: 60px; */
-  width: 65%;
+  /* width: 65%; */
   flex: 4;
   padding: 60px 0 0 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .expenseEdit {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 480px) {

@@ -42,7 +42,7 @@ export default {
         email: this.email,
         password: this.password
       })
-        this.$router.replace("/")
+        this.$router.replace("/report")
       }).catch(error => {
         alert(error)
       })

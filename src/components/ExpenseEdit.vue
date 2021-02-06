@@ -215,7 +215,6 @@ export default {
     pickerClosedChange() {
       if (this.calendarDate) {
         this.calendarDate = moment(this.calendarDate).format("YYYY-MM-DD");
-        console.log(this.calendarDate);
       }
     },
     append(number) {
@@ -355,7 +354,7 @@ label {
 @media screen and (max-width: 480px) {
 
   .datepicker {
-  margin-left: 10px;
+  margin-left: 30px;
   margin-top: 10px;
   width: 80%;
   
@@ -372,10 +371,11 @@ label {
   .container {
     grid-template-columns: repeat(auto-fit, 50px);
     gap: 10px;
+  margin-left: 10px;
   }
 
   .edit-grid {
-    margin-left: 15px;
+    margin-left: 20px;
   }
 
   .amount-btn {

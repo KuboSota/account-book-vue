@@ -1,11 +1,10 @@
 <script>
 import moment from "moment"
 import { Doughnut } from "vue-chartjs";
-// const { reactiveProp } = mixins;
+
 
 export default {
   extends: Doughnut,
-  // mixins: [reactiveProp],
 
   data() {
     return {
@@ -51,18 +50,14 @@ export default {
           let others = datasetsData[3] + item.income;
           datasetsData.splice(3, 1, others);
         }
-        // console.log(datasetsData)
 
-        // if (item.contents === this.datasets.label) {
-        //   this.datasets.data = this.datasets.data + item.income;
-        // }
       });
     },
      getMoment() {
       let m = moment();
       this.month = Number(moment(m).format("YYYY-MM-DD").slice(5, 7));
       this.year = Number(moment(m).format("YYYY-MM-DD").slice(0, 4));
-      console.log(this.month);
+ 
     },
   },
 
@@ -77,10 +72,7 @@ export default {
       afterDraw(chart, go) {// eslint-disable-line no-unused-vars        
         let ctx = chart.ctx;
         chart.data.datasets.forEach((dataset, i) => {
-          // let dataSum = 0;
-          // dataset.data.forEach((element) => {
-          //   dataSum += element;
-          // });
+
 
           let meta = chart.getDatasetMeta(i);
           if (!meta.hidden) {

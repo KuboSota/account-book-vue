@@ -51,7 +51,7 @@ export default new Vuex.Store({
         )
         commit("auth", responseLogin.data.auth)
         commit("user", responseUser.data.data[0])
-        router.replace("/")
+        router.replace("/report")
       },
 
       logout({ commit }) {
@@ -60,9 +60,8 @@ export default new Vuex.Store({
             auth: this.state.auth
           })
           .then((response) => {
-            console.log(response)
             commit("logout", response.data.auth)
-            router.replace("/login")
+            router.replace("/")
           })
           .catch((error) => [
             console.log(error)
@@ -78,7 +77,6 @@ export default new Vuex.Store({
          for (let i = 0; i < res.data.data.length; i++) {
            if (res.data.data[i].user_id === context.state.user.id) {
              data.push(res.data.data[i])
-             console.log(res.data.data[i])
            } 
           }
           context.commit("income", data)            

@@ -143,7 +143,6 @@ export default {
     pickerClosedChange() {
       if (this.calendarDate) {
         this.calendarDate = moment(this.calendarDate).format("YYYY-MM-DD");
-        console.log(this.calendarDate);
       }
     },
     append(number) {
